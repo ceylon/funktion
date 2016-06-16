@@ -37,6 +37,7 @@
   </properties>
 
   <modules>
+    <module>starter-parent-ceylon</module>
     <module>starter-parent-groovy</module>
     <module>starter-parent-java</module>
     <module>starter-parent-kotlin</module>

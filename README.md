@@ -32,6 +32,7 @@ In a sense funktion is a [serverless](https://www.quora.com/What-is-Serverless-C
 
 Check out the following example projects:
 
+* [funktion-ceylon-example](https://github.com/fabric8-quickstarts/funktion-ceylon-example) is an example using a [Ceylon](https://ceylon-lang.org/) funktion triggered by HTTP
 * [funktion-java-example](https://github.com/fabric8-quickstarts/funktion-java-example) is an example using a Java funktion triggered by HTTP
 * [funktion-groovy-example](https://github.com/fabric8-quickstarts/funktion-groovy-example) is an example using a [Groovy](http://www.groovy-lang.org/) funktion triggered by HTTP
 * [funktion-kotlin-example](https://github.com/fabric8-quickstarts/funktion-kotlin-example) is an example using a [Kotlin](https://kotlinlang.org/) funktion triggered by HTTP
@@ -82,7 +83,7 @@ Coming soon!!! :)
 
 ### How it works
 
-When you implement your **Funktion** using a JVM based language like Java, Groovy, Kotlin or Scala then your function is packaged up into a [Spring Boot](http://projects.spring.io/spring-boot/) application using [Apache Camel](http://camel.apache.org/) to implement the trigger via the various [endpoint URLs](http://camel.apache.org/components.html).
+When you implement your **Funktion** using a JVM based language like Java, Groovy, Kotlin, Ceylon or Scala then your function is packaged up into a [Spring Boot](http://projects.spring.io/spring-boot/) application using [Apache Camel](http://camel.apache.org/) to implement the trigger via the various [endpoint URLs](http://camel.apache.org/components.html).
 
 When using non-JVM based languages to implement your **Funktion** then the [Spring Boot](http://projects.spring.io/spring-boot/) and Camel based trigger processor is embedded into your [Kubernetes Pod](http://kubernetes.io/docs/user-guide/pods/) via a [sidecar container](http://blog.kubernetes.io/2015/06/the-distributed-system-toolkit-patterns.html) which then invokes your funktion; usually via a local REST call [at least for now](https://github.com/fabric8io/funktion/issues/11). Note that the use of sidecar is our current implementation strategy; going forward we'll support various options such as separating the trigger containers from the funktion containers for independent scaling for better resource utilisation.
 
